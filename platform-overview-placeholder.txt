@@ -1,0 +1,4 @@
+Place your video file here or update index.html source to point to an existing mp4.
+
+Expected filename in index.html: platform-overview.mp4
+

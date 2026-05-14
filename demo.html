@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Book a demo - Caviient" />
+  <title>Book a Demo — Caviient</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .demo-page{min-height:100vh; position:relative; overflow:hidden;}
+    .demo-hero-bg{
+      position:absolute; inset:0; z-index:-2;
+      background:
+        radial-gradient(circle at 12% 22%, rgba(29,78,216,.26), transparent 55%),
+        radial-gradient(circle at 88% 14%, rgba(124,58,237,.22), transparent 52%),
+        radial-gradient(circle at 50% 92%, rgba(236,72,153,.12), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,1), rgba(248,250,252,1));
+    }
+    .demo-hero-bg::after{
+      content:"";
+      position:absolute; inset:-120px;
+      background:
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600"><path d="M50 200c80-60 170-70 270-30s160 30 240-20 150-80 250-20 190 90 310 40" fill="none" stroke="%231D4ED8" stroke-opacity="0.10" stroke-width="2"/><path d="M140 320c70-40 140-50 220-20s130 30 200-10 110-70 200-20 170 80 270 30" fill="none" stroke="%237C3AED" stroke-opacity="0.10" stroke-width="2"/></svg>');
+      background-size:cover;
+      opacity:.5;
+      z-index:-1;
+    }
+
+    .demo-wrap{
+      padding:64px 0 42px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .demo-panel{
+      width:min(980px, 92vw);
+      margin:0 auto;
+      border-radius:var(--radius-xl);
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(229,231,235,.9);
+      box-shadow:var(--shadow-sm);
+      overflow:hidden;
+      position:relative;
+    }
+    .demo-panel::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:linear-gradient(135deg, rgba(29,78,216,.18), rgba(124,58,237,.12), rgba(236,72,153,.08));
+      opacity:.65;
+      pointer-events:none;
+    }
+    .demo-panel > *{position:relative; z-index:1;}
+
+    .demo-head{
+      padding:22px 22px 0;
+      display:flex; align-items:flex-start; justify-content:space-between; gap:16px;
+      flex-wrap:wrap;
+    }
+    .demo-head h1{
+      margin:0;
+      font-size:30px;
+      letter-spacing:-.03em;
+      line-height:1.15;
+    }
+    .demo-head p{margin:12px 0 0; color:var(--muted); font-weight:650; line-height:1.7; max-width:620px; font-size:14.5px;}
+
+    .demo-badges{display:flex; gap:10px; flex-wrap:wrap;}
+    .demo-badge{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(229,231,235,.95);
+      background:rgba(255,255,255,.72);
+      font-weight:950;
+      color:rgba(17,24,39,.9);
+      font-size:12.5px;
+    }
+
+    .demo-form{
+      padding:18px 22px 24px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      align-items:start;
+    }
+    .demo-form .field{margin:0;}
+    .demo-form .contact-form__full{grid-column:1 / -1;}
+
+    .demo-form-actions{
+      grid-column:1 / -1;
+      display:flex; gap:12px; align-items:center; justify-content:flex-start; flex-wrap:wrap;
+      margin-top:4px;
+    }
+    .demo-note{color:var(--muted); font-weight:700; font-size:12.5px; line-height:1.6;}
+
+    @media (max-width: 860px){
+      .demo-wrap{padding:36px 0 28px;}
+      .demo-form{grid-template-columns:1fr;}
+      .demo-head{padding:20px 18px 0;}
+      .demo-form{padding:14px 18px 20px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-page">
+    <div class="demo-hero-bg" aria-hidden="true"></div>
+
+    <div class="demo-wrap">
+      <div class="demo-panel">
+        <div class="demo-head">
+          <div>
+            <h1>Book a demo</h1>
+            <p>Get a guided walkthrough of secure care coordination, HIPAA-aligned workflows, and analytics dashboards. This template is front-end only (no backend).</p>
+          </div>
+
+          <div class="demo-badges" aria-hidden="true">
+            <div class="demo-badge"><i class="fa-solid fa-shield-heart" style="color:var(--primary); margin-right:8px"></i>Secure by design</div>
+            <div class="demo-badge"><i class="fa-solid fa-lock" style="color:var(--purple); margin-right:8px"></i>HIPAA-aligned UX</div>
+          </div>
+        </div>
+
+        <form class="demo-form" onsubmit="return false;">
+          <label class="field">
+            <span class="field__label">Full name</span>
+            <input class="field__input" type="text" placeholder="Your name" required />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Work email</span>
+            <input class="field__input" type="email" placeholder="name@company.com" required />
+          </label>
+
+          <label class="field contact-form__full">
+            <span class="field__label">Organization</span>
+            <input class="field__input" type="text" placeholder="Clinic / Home care provider" required />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Primary use case</span>
+            <input class="field__input" type="text" placeholder="Care coordination, documentation, analytics…" required />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Team size</span>
+            <input class="field__input" type="text" placeholder="e.g. 10-50 clinicians" required />
+          </label>
+
+          <label class="field contact-form__full">
+            <span class="field__label">What do you need?</span>
+            <textarea class="field__input field__textarea" placeholder="Scheduling, documentation, dashboards, compliance…" rows="4" required></textarea>
+          </label>
+
+          <div class="demo-form-actions">
+            <button type="submit" class="btn btn--primary btn--animated" data-ripple>
+              <span class="btn__text">Request demo</span>
+              <span class="btn__icon" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+            <div class="demo-note">After submission, you’ll stay on this page (no backend configured).</div>
+            <a href="index.html#home" class="btn btn--outline" style="margin-left:auto" data-ripple>
+              <span class="btn__text">Back to site</span>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const btns = document.querySelectorAll('button[data-ripple], a[data-ripple]');
+      btns.forEach(btn=>{
+        btn.addEventListener('pointerdown', (e)=>{
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          btn.style.setProperty('--rx', x + 'px');
+          btn.style.setProperty('--ry', y + 'px');
+          btn.classList.remove('ripple-animate');
+          void btn.offsetWidth;
+          btn.classList.add('ripple-animate');
+          setTimeout(()=>btn.classList.remove('ripple-animate'), 650);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
+

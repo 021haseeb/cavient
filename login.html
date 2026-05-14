@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Login - Caviient" />
+  <title>Login — Caviient</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Page-specific (kept here to avoid disturbing existing layout) */
+    .auth-page{
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .auth-bg{
+      position:absolute; inset:0;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(29,78,216,.26), transparent 50%),
+        radial-gradient(circle at 85% 15%, rgba(124,58,237,.22), transparent 45%),
+        radial-gradient(circle at 60% 90%, rgba(236,72,153,.12), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,1), rgba(248,250,252,1));
+      z-index:-2;
+    }
+    .auth-bg::after{
+      content:"";
+      position:absolute; inset:-100px;
+      background:
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600"><path d="M50 200c80-60 170-70 270-30s160 30 240-20 150-80 250-20 190 90 310 40" fill="none" stroke="%231D4ED8" stroke-opacity="0.10" stroke-width="2"/><path d="M140 320c70-40 140-50 220-20s130 30 200-10 110-70 200-20 170 80 270 30" fill="none" stroke="%237C3AED" stroke-opacity="0.10" stroke-width="2"/></svg>');
+      background-size:cover;
+      opacity:.55;
+      z-index:-1;
+      filter:blur(0px);
+    }
+
+    .auth-shell{
+      width:min(980px, 92vw);
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .auth-left{
+      padding:28px;
+      border-radius:var(--radius-xl);
+      background:rgba(255,255,255,.68);
+      border:1px solid rgba(229,231,235,.9);
+      box-shadow:var(--shadow-sm);
+      position:relative;
+      overflow:hidden;
+    }
+    .auth-left::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:linear-gradient(135deg, rgba(29,78,216,.20), rgba(124,58,237,.12), rgba(236,72,153,.08));
+      opacity:.7;
+      pointer-events:none;
+    }
+    .auth-left > *{position:relative; z-index:1;}
+
+    .auth-brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:900;
+      letter-spacing:.2px;
+      margin-bottom:18px;
+    }
+    .auth-brand__icon{
+      width:44px; height:44px; border-radius:16px;
+      display:grid; place-items:center;
+      background:linear-gradient(135deg, rgba(29,78,216,.12), rgba(124,58,237,.10));
+      border:1px solid rgba(229,231,235,.9);
+      color:var(--primary);
+      box-shadow:0 16px 40px rgba(29,78,216,.12);
+    }
+    .auth-left h1{
+      margin:0;
+      font-size:34px;
+      letter-spacing:-.03em;
+      line-height:1.1;
+    }
+    .auth-left p{
+      margin:12px 0 0;
+      color:var(--muted);
+      font-weight:650;
+      line-height:1.7;
+      font-size:14.5px;
+    }
+
+    .auth-metric-row{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+    .auth-metric{
+      padding:14px;
+      border-radius:18px;
+      border:1px solid rgba(229,231,235,.85);
+      background:rgba(255,255,255,.72);
+    }
+    .auth-metric__top{display:flex; align-items:center; gap:10px;}
+    .auth-metric__icon{
+      width:40px; height:40px; border-radius:16px;
+      display:grid; place-items:center;
+      border:1px solid rgba(37,99,235,.22);
+      background:rgba(29,78,216,.10);
+      color:var(--primary);
+    }
+    .auth-metric__label{color:var(--muted); font-weight:800; font-size:12.5px; margin-top:2px;}
+    .auth-metric__value{font-weight:1000; letter-spacing:-.02em; margin-top:4px; font-size:18px;}
+
+    .auth-right{
+      padding:24px;
+      border-radius:var(--radius-xl);
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(229,231,235,.9);
+      box-shadow:var(--shadow-sm);
+      position:relative;
+      overflow:hidden;
+    }
+    .auth-right::after{
+      content:"";
+      position:absolute; inset:-2px;
+      background:radial-gradient(circle at 20% 10%, rgba(29,78,216,.20), transparent 40%),
+                 radial-gradient(circle at 80% 0%, rgba(124,58,237,.18), transparent 45%);
+      opacity:.7;
+      pointer-events:none;
+    }
+    .auth-right > *{position:relative; z-index:1;}
+
+    .auth-card{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .auth-title{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .auth-title h2{
+      margin:0;
+      font-size:20px;
+      font-weight:1000;
+      letter-spacing:-.02em;
+    }
+    .auth-pill{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(29,78,216,.20);
+      background:rgba(29,78,216,.08);
+      color:rgba(29,78,216,.98);
+      font-weight:950;
+      font-size:12px;
+      white-space:nowrap;
+      transform:translateY(0);
+      animation:floatPill 3.2s ease-in-out infinite;
+    }
+    @keyframes floatPill{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+    .auth-field{
+      display:block;
+    }
+    .auth-field label{
+      display:block;
+      font-weight:900;
+      color:rgba(17,24,39,.86);
+      font-size:13px;
+      margin-bottom:8px;
+    }
+    .auth-field input{
+      width:100%;
+      padding:14px 14px;
+      border-radius:16px;
+      border:1px solid rgba(229,231,235,.95);
+      background:rgba(255,255,255,.9);
+      color:rgba(17,24,39,.92);
+      font-weight:700;
+      outline:none;
+      transition:box-shadow .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .auth-field input:focus{
+      border-color:rgba(37,99,235,.45);
+      box-shadow:0 0 0 4px rgba(29,78,216,.12);
+      transform:translateY(-1px);
+    }
+
+    .auth-actions{
+      display:flex; gap:12px; align-items:center;
+    }
+
+    .auth-btn{
+      width:100%;
+      justify-content:center;
+      padding:14px 16px;
+    }
+
+    .auth-links{
+      display:flex; justify-content:space-between; gap:12px;
+      align-items:center;
+      margin-top:2px;
+      color:var(--muted);
+      font-weight:800;
+      font-size:13px;
+    }
+    .auth-links a{color:rgba(29,78,216,.98); font-weight:1000;}
+
+    .auth-social{
+      display:flex; gap:12px;
+    }
+    .auth-social .icon-btn{
+      flex:1;
+      display:flex; align-items:center; justify-content:center;
+      padding:12px;
+      border-radius:16px;
+      border:1px solid rgba(229,231,235,.95);
+      background:rgba(255,255,255,.86);
+      font-weight:1000;
+      color:rgba(17,24,39,.9);
+      transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .auth-social .icon-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 45px rgba(15,23,42,.10);
+      border-color:rgba(37,99,235,.35);
+    }
+
+    .auth-anim-in{
+      opacity:0;
+      transform:translateY(10px) scale(.98);
+      animation:authIn .55s ease forwards;
+    }
+    @keyframes authIn{
+      to{opacity:1; transform:translateY(0) scale(1)}
+    }
+
+    .auth-anim-in:nth-child(1){animation-delay:.05s}
+    .auth-anim-in:nth-child(2){animation-delay:.10s}
+    .auth-anim-in:nth-child(3){animation-delay:.15s}
+    .auth-anim-in:nth-child(4){animation-delay:.20s}
+    .auth-anim-in:nth-child(5){animation-delay:.25s}
+
+    @media (max-width: 860px){
+      .auth-shell{grid-template-columns:1fr;}
+      .auth-left{display:none;}
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-bg" aria-hidden="true"></div>
+
+    <div class="auth-shell">
+      <aside class="auth-left">
+        <div class="auth-brand">
+          <span class="auth-brand__icon" aria-hidden="true"><i class="fa-solid fa-stethoscope"></i></span>
+          <span>Caviient</span>
+        </div>
+        <h1>Sign in securely</h1>
+        <p>Access your connected care workflows with HIPAA-ready UX, role-based navigation, and audit-friendly documentation.</p>
+
+        <div class="auth-metric-row">
+          <div class="auth-metric">
+            <div class="auth-metric__top">
+              <div class="auth-metric__icon" aria-hidden="true"><i class="fa-solid fa-shield-heart"></i></div>
+              <div>
+                <div class="auth-metric__value">Secure</div>
+                <div class="auth-metric__label">by design</div>
+              </div>
+            </div>
+          </div>
+          <div class="auth-metric">
+            <div class="auth-metric__top">
+              <div class="auth-metric__icon" aria-hidden="true"><i class="fa-solid fa-lock"></i></div>
+              <div>
+                <div class="auth-metric__value">HIPAA</div>
+                <div class="auth-metric__label">aligned</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="auth-right">
+        <div class="auth-card">
+          <div class="auth-title auth-anim-in">
+            <h2>Welcome back</h2>
+            <div class="auth-pill" aria-hidden="true">Animated Login</div>
+          </div>
+
+          <form onsubmit="return false;" class="auth-form">
+            <div class="auth-field auth-anim-in">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="name@company.com" autocomplete="email" required />
+            </div>
+
+            <div class="auth-field auth-anim-in" style="margin-top:14px;">
+              <label for="password">Password</label>
+              <input id="password" type="password" placeholder="••••••••" autocomplete="current-password" required />
+            </div>
+
+            <div class="auth-actions auth-anim-in" style="margin-top:18px;">
+              <button type="submit" class="btn btn--primary btn--animated auth-btn" data-ripple>
+                <span class="btn__text">Sign in</span>
+                <span class="btn__icon" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+              </button>
+            </div>
+
+            <div class="auth-links auth-anim-in">
+              <label style="display:flex; gap:10px; align-items:center; cursor:pointer;">
+                <input type="checkbox" />
+                <span>Remember me</span>
+              </label>
+              <a href="#" onclick="return false;">Forgot password?</a>
+            </div>
+          </form>
+
+          <div class="auth-social auth-anim-in">
+            <a class="icon-btn" href="#" onclick="return false;" aria-label="Login with Google"><i class="fa-brands fa-google"></i></a>
+            <a class="icon-btn" href="#" onclick="return false;" aria-label="Login with Microsoft"><i class="fa-brands fa-microsoft"></i></a>
+          </div>
+
+          <div class="auth-links auth-anim-in" style="justify-content:center; gap:8px;">
+            <span>New here?</span>
+            <a href="#" onclick="return false;">Create an account</a>
+          </div>
+
+          <div class="auth-links auth-anim-in" style="margin-top:6px; justify-content:center;">
+            <a href="index.html#home" style="font-weight:950;">← Back to site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>
+    // Ripple animation uses the same CSS mechanism as the main site.
+    (function(){
+      const btns = document.querySelectorAll('button[data-ripple], a[data-ripple]');
+      btns.forEach(btn=>{
+        btn.addEventListener('pointerdown', (e)=>{
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          btn.style.setProperty('--rx', x + 'px');
+          btn.style.setProperty('--ry', y + 'px');
+          btn.classList.remove('ripple-animate');
+          void btn.offsetWidth;
+          btn.classList.add('ripple-animate');
+          setTimeout(()=>btn.classList.remove('ripple-animate'), 650);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,17 @@
+:root{--bbai-break-480:480px;--bbai-break-768:768px}
+@media (max-width: 480px){
+  .container{padding:0 14px}
+  .hero__title{font-size:26px;}
+  .section-head__title{font-size:24px;}
+  .hero__sub{font-size:14px;}
+  .hero__globalText{font-size:14px;}
+  .testimonial-card__quote{font-size:34px;}
+  .pricing-card__price{font-size:30px;}
+
+  .services-grid,.stats-grid,.highlight-strip,.premiumTrust__grid,.testimonials-grid,.pricing-grid,.team-grid,.resources-grid,.contact-grid{grid-template-columns:1fr;}
+
+  .hero__visual{min-height:380px; overflow:clip;}
+  .hero__map{inset:-20px -20px -20px -20px;}
+  .device--laptop{top:34px;}
+}
+
