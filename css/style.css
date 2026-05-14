@@ -678,7 +678,7 @@ body{
   color:#fff;
   transform:scale(1.05);
 }
-.service-card__icon--blue{background:rgba(0, 173, 221, 0.12); color:var(--primary); border-color:rgba(29,78,216,.22)}
+.service-card__icon--blue{background:rgba(24, 55, 233, 0.751); color:var(--primary); border-color:rgba(29,78,216,.22)}
 .service-card__icon--purple{background:rgba(124,58,237,.12); color:var(--purple); border-color:rgba(124,58,237,.22)}
 .service-card__icon--green{background:rgba(16,185,129,.12); color:var(--success); border-color:rgba(16,185,129,.22)}
 .service-card__icon--orange{background:rgba(245,158,11,.14); color:var(--orange); border-color:rgba(245,158,11,.25)}
@@ -798,11 +798,12 @@ body{
     width:calc(100% - 80px);
     max-width:1600px;
 
-    /* CENTER + SIDE SPACING */
-    margin:0 auto 80px auto;
+    margin:0 auto 60px auto;
 
-    min-height:520px;
-    padding:60px 70px;
+    /* REDUCED HEIGHT */
+    min-height:320px;
+
+    padding:40px 60px;
 
     display:flex;
     align-items:center;
@@ -815,9 +816,8 @@ body{
     linear-gradient(rgba(4,17,47,0.90), rgba(4,17,47,0.90)),
     url("https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=2070&auto=format&fit=crop");
 
-    /* RIGHT SIDE SPACE */
-    background-size:85%;
-    background-position:right 40px center;
+    background-size:120%;
+    background-position:right  center;
     background-repeat:no-repeat;
 
     background-color:#04112f;
@@ -1478,9 +1478,10 @@ body{
 
 /* DARK PILL CONTAINER */
 .precontainer{
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 30px 40px;
+  
 
   background:
     radial-gradient(900px 400px at 85% 60%, rgba(59,130,246,0.25), transparent 60%),
