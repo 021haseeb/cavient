@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Caviient is a connected home healthcare platform that helps organizations coordinate care, keep HIPAA-aligned documentation, and deliver analytics—securely." />
+  <meta name="description" content="Cavient is a connected home healthcare platform that helps organizations coordinate care, keep HIPAA-aligned documentation, and deliver analytics—securely." />
   <meta name="keywords" content="home healthcare, care coordination, HIPAA, analytics, scheduling, documentation, compliance" />
   <meta name="author" content="Caviient" />
   <meta name="theme-color" content="#1D4ED8" />
@@ -16,7 +16,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/video-modal.css" />
@@ -35,25 +36,7 @@
   </div>
 
   <!-- Background decorative layers -->
-  <div class="bg-blobs" aria-hidden="true">
-    <span class="blob blob--1"></span>
-    <span class="blob blob--2"></span>
-    <span class="blob blob--3"></span>
-  </div>
-
-  <!-- Animated SVG shapes background -->
-  <svg class="bg-shapes" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
-    <defs>
-      <linearGradient id="shapeGrad" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#1D4ED8" stop-opacity="0.35" />
-        <stop offset="1" stop-color="#7C3AED" stop-opacity="0.2" />
-      </linearGradient>
-    </defs>
-    <path class="shape shape--1" d="M50,520 C180,380 260,640 420,520 C580,400 650,560 760,500 C870,440 920,560 1070,510 L1170,480 L1170,820 L50,820 Z" fill="url(#shapeGrad)"/>
-    <path class="shape shape--2" d="M-20,420 C120,320 210,470 360,410 C520,350 590,500 710,450 C830,400 900,480 1030,450 C1130,426 1200,390 1240,360 L1240,820 L-20,820 Z" fill="#2563EB" opacity="0.10"/>
-    <circle class="shape shape--dot" cx="240" cy="220" r="120" fill="#1D4ED8" opacity="0.10"/>
-    <circle class="shape shape--dot2" cx="940" cy="170" r="160" fill="#7C3AED" opacity="0.10"/>
-  </svg>
+  
 
   <!-- Header / Navbar -->
   <header class="site-header" data-scroll-header>
@@ -62,7 +45,7 @@
         <span class="brand__icon" aria-hidden="true">
           <img class="brand__logo" src="cavientlogo.png" alt="" />
         </span>
-        <span class="brand__text">Cavient</span>
+        
       </a>
 
 
@@ -243,7 +226,7 @@
           </div>
 
           <h2 class="hero__title hero__title--alt" data-aos="fade-up" data-aos-duration="900" data-aos-delay="80">
-            The Global Platform for Home Healthcare Management
+            The Global Platform for <span style="color:#2563eb;">Home Healthcare</span> Management
           </h2>
 
           <div class="hero__global" data-aos="fade-up" data-aos-duration="900" data-aos-delay="160">
@@ -537,6 +520,59 @@
       </div>
     </section>
 
+  <!-- WORLD PIC -->
+<section class="global-section">
+
+    <div class="left-content">
+
+        <span class="small-title">
+            BUILT FOR THE WORLD
+        </span>
+
+        <h2 class="main-heading">
+            One Platform.<br>
+            Any Country.
+        </h2>
+
+        <p class="description">
+            Cavient is designed to adapt to local regulations,
+            languages, and operational needs—so you can deliver
+            care anywhere.
+        </p>
+
+        <div class="features">
+
+            <div class="feature-item">
+                <div class="check-icon">✓</div>
+                <span>Multi-country compliance support</span>
+            </div>
+
+            <div class="feature-item">
+                <div class="check-icon">✓</div>
+                <span>Multi-language interface</span>
+            </div>
+
+            <div class="feature-item">
+                <div class="check-icon">✓</div>
+                <span>Multi-currency capabilities</span>
+            </div>
+
+            <div class="feature-item">
+                <div class="check-icon">✓</div>
+                <span>Configurable workflows by region</span>
+            </div>
+
+            <div class="feature-item">
+                <div class="check-icon">✓</div>
+                <span>Multi-entity and multi-location support</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
     <!-- STATS (Dark blue) -->
     <section class="section section--dark" aria-label="Key platform metrics">
       <div class="container">
@@ -572,277 +608,29 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="section section--light" id="testimonials" aria-labelledby="testimonials-title">
-      <div class="container">
-        <div class="section-head" data-aos="fade-up">
-          <h2 class="section-head__title" id="testimonials-title">Trusted by care teams</h2>
-          <p class="section-head__sub">Real outcomes from coordinated home healthcare and secure documentation.</p>
-        </div>
+    
+    <!-- CTA -->
+    <section class="cta-section">
+  <div class="cta-container">
 
-        <div class="testimonials-grid">
-          <article class="testimonial-card" data-aos="fade-up" data-aos-duration="700">
-            <div class="testimonial-card__quote">“</div>
-            <p class="testimonial-card__text">Caviient helped us unify visits, notes, and care coordination so clinicians spend less time searching and more time caring.</p>
-            <div class="testimonial-card__person">
-              <div class="testimonial-card__avatar" aria-hidden="true"><i class="fa-solid fa-user-doctor"></i></div>
-              <div>
-                <div class="testimonial-card__name">Dr. Amina Rahman</div>
-                <div class="testimonial-card__role">Clinical Director</div>
-              </div>
-            </div>
-          </article>
+    <div class="cta-left">
+      <h2>Ready to Transform<br> Your Healthcare Operations?</h2>
+      <p>
+        Join thousands of providers who trust Cavient to simplify operations,
+        ensure compliance, and elevate care.
+      </p>
+    </div>
 
-          <article class="testimonial-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="60">
-            <div class="testimonial-card__quote">“</div>
-            <p class="testimonial-card__text">The workflow is fast, secure, and HIPAA-ready. Our documentation is now consistent across every team.</p>
-            <div class="testimonial-card__person">
-              <div class="testimonial-card__avatar" aria-hidden="true"><i class="fa-solid fa-notes-medical"></i></div>
-              <div>
-                <div class="testimonial-card__name">Jordan Lee</div>
-                <div class="testimonial-card__role">Care Operations</div>
-              </div>
-            </div>
-          </article>
+    <div class="cta-right">
+      <a href="#" class="btn btn-dark">Book a Demo →</a>
+      <a href="#" class="btn btn-light">Talk to an Expert</a>
+    </div>
 
-          <article class="testimonial-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="120">
-            <div class="testimonial-card__quote">“</div>
-            <p class="testimonial-card__text">Actionable analytics made it easy to spot gaps early and respond quickly—patients notice the difference.</p>
-            <div class="testimonial-card__person">
-              <div class="testimonial-card__avatar" aria-hidden="true"><i class="fa-solid fa-heart-pulse"></i></div>
-              <div>
-                <div class="testimonial-card__name">Sophia Martinez</div>
-                <div class="testimonial-card__role">Home Healthcare Lead</div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section class="section section--light" id="pricing" aria-labelledby="pricing-title">
-      <div class="container">
-        <div class="section-head" data-aos="fade-up">
-          <h2 class="section-head__title" id="pricing-title">Simple pricing that scales</h2>
-          <p class="section-head__sub">Start secure, then expand across teams and services.</p>
-        </div>
-
-        <div class="pricing-grid">
-          <article class="pricing-card" data-aos="fade-up" data-aos-duration="700">
-            <div class="pricing-card__top">
-              <div class="pricing-card__tier">Starter</div>
-              <div class="pricing-card__price"><span class="pricing-card__currency">$</span>49</div>
-              <div class="pricing-card__billing">per month</div>
-            </div>
-            <ul class="pricing-card__list">
-              <li><i class="fa-solid fa-check"></i> Core workflow & documentation</li>
-              <li><i class="fa-solid fa-check"></i> Secure patient notes</li>
-              <li><i class="fa-solid fa-check"></i> Basic analytics</li>
-              <li><i class="fa-solid fa-check"></i> Email support</li>
-            </ul>
-            <a href="#contact" class="btn btn--secondary pricing-card__btn" data-ripple>Get Started</a>
-          </article>
-
-          <article class="pricing-card pricing-card--featured" data-aos="fade-up" data-aos-duration="700" data-aos-delay="80">
-            <div class="pricing-card__badge">Most Popular</div>
-            <div class="pricing-card__top">
-              <div class="pricing-card__tier">Growth</div>
-              <div class="pricing-card__price"><span class="pricing-card__currency">$</span>99</div>
-              <div class="pricing-card__billing">per month</div>
-            </div>
-            <ul class="pricing-card__list">
-              <li><i class="fa-solid fa-check"></i> Advanced care coordination</li>
-              <li><i class="fa-solid fa-check"></i> Compliance-ready workflows</li>
-              <li><i class="fa-solid fa-check"></i> Real-time dashboards</li>
-              <li><i class="fa-solid fa-check"></i> Priority support</li>
-            </ul>
-            <a href="#contact" class="btn btn--primary pricing-card__btn" data-ripple>Start Growth</a>
-          </article>
-
-          <article class="pricing-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="160">
-            <div class="pricing-card__top">
-              <div class="pricing-card__tier">Enterprise</div>
-              <div class="pricing-card__price">Custom</div>
-              <div class="pricing-card__billing">for large teams</div>
-            </div>
-            <ul class="pricing-card__list">
-              <li><i class="fa-solid fa-check"></i> Multi-team deployment</li>
-              <li><i class="fa-solid fa-check"></i> Dedicated onboarding</li>
-              <li><i class="fa-solid fa-check"></i> Advanced security & controls</li>
-              <li><i class="fa-solid fa-check"></i> SLAs & account management</li>
-            </ul>
-            <a href="#contact" class="btn btn--secondary pricing-card__btn" data-ripple>Talk to Sales</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section section--dark" id="faq" aria-labelledby="faq-title">
-      <div class="container">
-        <div class="section-head" data-aos="fade-up">
-          <h2 class="section-head__title" id="faq-title">Frequently asked questions</h2>
-          <p class="section-head__sub">Everything you need to know about the platform and security.</p>
-        </div>
-
-        <div class="faq-grid">
-          <details class="faq-item" data-aos="fade-up" data-aos-duration="700">
-            <summary class="faq-item__summary"><span>Is Caviient HIPAA-ready?</span><i class="fa-solid fa-plus"></i></summary>
-            <div class="faq-item__content">
-              Yes—workflows are designed to support HIPAA-aligned documentation and secure care coordination.
-            </div>
-          </details>
-
-          <details class="faq-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="60">
-            <summary class="faq-item__summary"><span>Can we onboard multiple care teams?</span><i class="fa-solid fa-plus"></i></summary>
-            <div class="faq-item__content">
-              Absolutely. The platform scales across teams with consistent access, roles, and workflows.
-            </div>
-          </details>
-
-          <details class="faq-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="120">
-            <summary class="faq-item__summary"><span>Does it work on mobile devices?</span><i class="fa-solid fa-plus"></i></summary>
-            <div class="faq-item__content">
-              Yes. Care teams can access key workflows on modern browsers and responsive layouts.
-            </div>
-          </details>
-
-          <details class="faq-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="180">
-            <summary class="faq-item__summary"><span>Do you offer support after launch?</span><i class="fa-solid fa-plus"></i></summary>
-            <div class="faq-item__content">
-              Yes—Starter includes email support, while Growth and Enterprise provide priority help and onboarding guidance.
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
+  </div>
+</section>
+    
     <!-- CONTACT -->
-    <section class="section section--light" id="contact" aria-labelledby="contact-title">
-      <div class="container">
-        <div class="section-head" data-aos="fade-up">
-          <h2 class="section-head__title" id="contact-title">Request a demo</h2>
-          <p class="section-head__sub">Tell us about your organization—we’ll get back with next steps.</p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-card" data-aos="fade-up" data-aos-duration="700">
-            <div class="contact-card__row">
-              <i class="fa-solid fa-location-dot"></i>
-              <div>
-                <div class="contact-card__label">Coverage</div>
-                <div class="contact-card__value">Global care organizations</div>
-              </div>
-            </div>
-            <div class="contact-card__row">
-              <i class="fa-solid fa-shield-heart"></i>
-              <div>
-                <div class="contact-card__label">Security</div>
-                <div class="contact-card__value">Secure, compliance-focused workflows</div>
-              </div>
-            </div>
-            <div class="contact-card__row">
-              <i class="fa-solid fa-headset"></i>
-              <div>
-                <div class="contact-card__label">Support</div>
-                <div class="contact-card__value">Onboarding + ongoing assistance</div>
-              </div>
-            </div>
-          </div>
-
-          <form class="contact-form" data-aos="fade-up" data-aos-duration="700" data-aos-delay="80" onsubmit="return false;">
-            <div class="contact-form__grid">
-              <label class="field">
-                <span class="field__label">Full name</span>
-                <input class="field__input" type="text" placeholder="Your name" required />
-              </label>
-              <label class="field">
-                <span class="field__label">Work email</span>
-                <input class="field__input" type="email" placeholder="name@company.com" required />
-              </label>
-              <label class="field contact-form__full">
-                <span class="field__label">Organization</span>
-                <input class="field__input" type="text" placeholder="Clinic / Home care provider" required />
-              </label>
-              <label class="field contact-form__full">
-                <span class="field__label">What do you need?</span>
-                <textarea class="field__input field__textarea" placeholder="Scheduling, documentation, analytics, compliance…" rows="4" required></textarea>
-              </label>
-            </div>
-            <button type="submit" class="btn btn--primary btn--animated" data-ripple>
-              <span class="btn__text">Send request</span>
-              <span class="btn__icon" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
-            </button>
-            <div class="contact-form__note">This demo form is static (no backend) in this template.</div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEAM -->
-    <section class="section section--light" id="team" aria-labelledby="team-title">
-      <div class="container">
-        <div class="section-head" data-aos="fade-up">
-          <h2 class="section-head__title" id="team-title">Meet the team</h2>
-          <p class="section-head__sub">Care-first product thinking, security-focused engineering.</p>
-        </div>
-
-        <div class="team-grid">
-          <article class="team-card" data-aos="fade-up" data-aos-duration="700">
-            <div class="team-card__avatar" aria-hidden="true"><i class="fa-solid fa-user-tie"></i></div>
-            <div class="team-card__name">Ethan Brooks</div>
-            <div class="team-card__role">Product & Partnerships</div>
-            <div class="team-card__social" aria-hidden="true"><i class="fa-brands fa-linkedin"></i><i class="fa-brands fa-twitter"></i></div>
-          </article>
-          <article class="team-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="80">
-            <div class="team-card__avatar" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
-            <div class="team-card__name">Maya Chen</div>
-            <div class="team-card__role">Security & Compliance</div>
-            <div class="team-card__social" aria-hidden="true"><i class="fa-brands fa-linkedin"></i><i class="fa-brands fa-twitter"></i></div>
-          </article>
-          <article class="team-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="160">
-            <div class="team-card__avatar" aria-hidden="true"><i class="fa-solid fa-brain"></i></div>
-            <div class="team-card__name">Noah Williams</div>
-            <div class="team-card__role">AI Intelligence</div>
-            <div class="team-card__social" aria-hidden="true"><i class="fa-brands fa-linkedin"></i><i class="fa-brands fa-twitter"></i></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- BLOG / RESOURCES -->
-    <section class="section section--light" id="resources" aria-labelledby="resources-title">
-      <div class="container">
-        <div class="section-head" data-aos="fade-up">
-          <h2 class="section-head__title" id="resources-title">Resources & insights</h2>
-          <p class="section-head__sub">Guides and updates to help care teams improve outcomes.</p>
-        </div>
-
-        <div class="resources-grid">
-          <article class="resource-card" data-aos="fade-up" data-aos-duration="700">
-            <div class="resource-card__tag">Guide</div>
-            <div class="resource-card__title">Documentation best practices for home care</div>
-            <div class="resource-card__desc">Keep notes consistent, audit-ready, and actionable for clinical teams.</div>
-            <a class="resource-card__link" href="#"><span>Read</span><i class="fa-solid fa-arrow-right"></i></a>
-          </article>
-
-          <article class="resource-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="80">
-            <div class="resource-card__tag">Security</div>
-            <div class="resource-card__title">HIPAA-aligned workflows in practice</div>
-            <div class="resource-card__desc">How to design secure care coordination processes across teams.</div>
-            <a class="resource-card__link" href="#"><span>Read</span><i class="fa-solid fa-arrow-right"></i></a>
-          </article>
-
-          <article class="resource-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="160">
-            <div class="resource-card__tag">Analytics</div>
-            <div class="resource-card__title">Turning care operations into insights</div>
-            <div class="resource-card__desc">Use dashboards to identify gaps early and improve patient outcomes.</div>
-            <a class="resource-card__link" href="#"><span>Read</span><i class="fa-solid fa-arrow-right"></i></a>
-          </article>
-        </div>
-      </div>
-    </section>
-
+    
     <!-- Beautiful footer -->
     <footer class="footer footer--pro" id="company" aria-label="Footer">
       <div class="bg-blobs footer__blobs" aria-hidden="true">
@@ -854,10 +642,10 @@
       <div class="container footer__inner">
         <div class="footer__brand">
           <div class="brand brand--footer">
-            <span class="brand__icon" aria-hidden="true">
+            
               <img class="brand__logo" src="cavientlogo.png" alt="" />
-            </span>
-            <span class="brand__text">Caviient</span>
+            
+           
           </div>
           <div class="footer__tagline">The global platform for home healthcare management.</div>
           <div class="footer__tagline footer__tagline--sub">Built with compliance at the core and care at heart.</div>
