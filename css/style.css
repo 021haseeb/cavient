@@ -287,57 +287,62 @@ body{
 
 @media (max-width: 768px){
 
-  /* 🔥 PURE HERO SECTION SPACING */
+  /* ✅ Mobile hero spacing (more readable, less cramped) */
   .hero{
-    padding:80px 0 40px; /* ❗ top + bottom breathing space */
+    padding:88px 0 44px;
   }
 
   .hero__grid{
     grid-template-columns:1fr;
-    gap:28px; /* elements ke darmiyan space */
+    gap:18px;
   }
 
   /* TEXT BLOCK */
   .hero__sub--left{
-    padding:0 4px; /* slight breathing */
+    padding:0 2px;
   }
 
   .hero__title{
     font-size:34px;
-    line-height:1.2;
-    margin-bottom:14px;
-  }
-
-  .hero__sub{
-    font-size:15px;
-    line-height:1.7;
+    line-height:1.12;
     margin-bottom:10px;
   }
 
+  /* paragraph spacing */
+  .hero__sub,
   .hero__globalText{
-    margin-top:8px;
+    font-size:15px;
+    line-height:1.75;
+    margin:0;
   }
 
-  /* 🔥 BUTTON SECTION */
+  .hero__globalText{
+    margin-top:10px;
+  }
+
+  /* BUTTON SECTION */
   .hero__cta{
-    margin-top:24px;
+    margin-top:18px;
     display:flex;
     flex-direction:column;
-    gap:14px;
+    align-items:stretch;
+    gap:12px;
   }
 
+  /* buttons: smaller on mobile to avoid oversized look */
   .hero__cta .btn{
-    width:100%;
-    padding:14px;
-    font-size:15px;
-    border-radius:14px;
+    width:auto;
+    padding:11px 14px;
+    font-size:14px;
+    border-radius:40px;
   }
+
 
   /* TRUST ITEMS spacing */
   .hero__trust{
-    margin-top:24px;
+    margin-top:20px;
     flex-direction:column;
-    gap:12px;
+    gap:10px;
   }
 
 }
@@ -637,7 +642,7 @@ body{
   color:#60a5fa;
 
   text-shadow:
-  0 0 10px rgba(96,165,250,0.18);
+  0 0 10px rgba(174, 255, 0, 0.18);
 }
 
 /*world pic */
@@ -929,6 +934,48 @@ body{
   align-items:center;
 }
 
+.footer__bottomLine{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.footer__bottomRight{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  align-items:flex-end;
+}
+
+.footer__social{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:flex-end;
+}
+
+.footer__socialLink{
+  width:40px;
+  height:40px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(229,231,235,.18);
+  color:rgba(255,255,255,.85);
+  transition:transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.footer__socialLink:hover{
+  transform:translateY(-2px);
+  background:rgba(219,234,254,.18);
+  border-color:rgba(37,99,235,.28);
+  color:rgba(147,197,253,1);
+}
+
+
 .footer__legalLink{
  
   font-family: sans-serif;
@@ -1070,13 +1117,14 @@ body{
   gap:12px;
   padding:12px 12px;
   border-radius:16px;
-  font-weight:100;
+  font-weight:200;
   font-size:12px;
   color:rgba(15,23,42,.92);
   transition:background .18s ease, transform .18s ease, color .18s ease;
   background:rgba(255,255,255,.08);
   border:1px solid rgba(229,231,235,.18);
 }
+
 .nav-dd__item i{
   font-size:18px;
   width:38px;
@@ -1148,8 +1196,16 @@ body{
   .nav-dd__menu{position:static; width:100%;}
 
   .nav{display:none}
+  /* Hide ugly Book a Demo button in responsive header */
+.header__actions .btn--primary{display:none}
+  
+  /* Reduce dropdown link weight on responsive header */
+  .nav-dd__item{font-weight:200;}
+  .mobile-dd__item{font-weight:200;}
+
   .header__actions .btn--outline{display:none}
   .hamburger{display:inline-flex}
+
 
   /* Required: stack/one-column layout on mobile */
   .services-grid{grid-template-columns:1fr;}
