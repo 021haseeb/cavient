@@ -793,9 +793,14 @@ body{
     display:block;
     margin-bottom:22px;
 }
+.check-icon img{
+  width:16px;
+  height:16px;
+  object-fit:contain;
+}
 
 .global-section{
-    width:calc(100% - 80px);
+    width:calc(120% - 80px);
     max-width:1600px;
 
     margin:0 auto 60px auto;
@@ -808,27 +813,34 @@ body{
     display:flex;
     align-items:center;
 
-    border-radius:32px;
+    
     overflow:hidden;
     position:relative;
 
     background-image:
-    linear-gradient(rgba(4,17,47,0.90), rgba(4,17,47,0.90)),
-    url("https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=2070&auto=format&fit=crop");
+    
+    url("worldpic.svg");
 
-    background-size:120%;
+    background-size:50%;
     background-position:right  center;
     background-repeat:no-repeat;
 
     background-color:#04112f;
 }
 @media(max-width:991px){
+  .check-icon img{
+  width:16px;
+  height:16px;
+  object-fit:contain;
+}
 
     .global-section{
         width:calc(100% - 40px);
+        height: 110vh;
 
-        background-size:cover;
-        background-position:center;
+        background-size:60%;
+        background-position:bottom;
+        border-radius: 50px;
     }
      .main-heading{
     font-size:42px;          /* smaller size */
@@ -958,14 +970,16 @@ body{
 .footer__blobs .blob--3{left:18%; bottom:-220px; width:420px; height:420px; background:rgba(236,72,153,.18)}
 
 .footer__brand{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:var(--radius-xl);
-  padding:20px 18px;
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  box-shadow:0 20px 70px rgba(2,6,23,.35);
+  /* remove boxed container look (logo + text should flow without a container) */
+  background:transparent;
+  border:none;
+  border-radius:0;
+  padding:0;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+  box-shadow:none;
 }
+
 
 .footer__brand .brand--footer{margin-bottom:12px}
 
@@ -1062,14 +1076,6 @@ body{
   align-items:center;
 }
 
-.footer__bottomLine{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:16px;
-  flex-wrap:wrap;
-}
-
 .footer__bottomRight{
   display:flex;
   flex-direction:column;
@@ -1077,12 +1083,27 @@ body{
   align-items:flex-end;
 }
 
+.footer__bottomLeft{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  align-items:flex-start;
+}
+
 .footer__social{
   display:flex;
   gap:12px;
   align-items:center;
-  justify-content:flex-end;
+  justify-content:flex-start;
 }
+
+/* Keep social links on the same visual line cluster as legal */
+.footer__bottomLine{
+  align-items:flex-start;
+}
+
+
+
 
 .footer__socialLink{
   width:40px;
@@ -1770,11 +1791,17 @@ body{
 
   /* 🔥 NEW BACKGROUND */
   background:
+    
+    url("Mask.png"),
     radial-gradient(900px 400px at 85% 60%, rgba(59,130,246,0.25), transparent 60%),
     radial-gradient(600px 300px at 80% 70%, rgba(96,165,250,0.35), transparent 65%),
     linear-gradient(135deg, #0a0f2c 0%, #0b1235 40%, #070a1f 100%);
 
-  background-color:#070a1f;
+  background-size: cover, cover, auto, auto, auto;
+  background-position: center, center, right, right, center;
+  background-repeat: no-repeat;
+
+  
 }
 
 /* LEFT SIDE */
