@@ -836,7 +836,7 @@ body{
 
     .global-section{
         width:calc(100% - 40px);
-        height: 110vh;
+        
 
         background-size:60%;
         background-position:bottom;
@@ -854,6 +854,7 @@ body{
 
     .global-section{
         width:calc(100% - 30px);
+        
     }
      .main-heading{
     font-size:36px;          /* smaller size */
