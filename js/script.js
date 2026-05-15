@@ -379,48 +379,48 @@
   }
 
   // ---------------- Hero particles ----------------
-  const particlesHost = $('.hero__particles');
-  if(particlesHost){
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(!prefersReduced){
-      const count = Math.min(42, Math.floor(window.innerWidth / 24));
-      for(let i=0;i<count;i++){
-        const p = document.createElement('span');
-        p.className = 'hero-particle';
-        const x = Math.random()*100;
-        const y = Math.random()*100;
-        const s = 2 + Math.random()*3;
-        const d = 2 + Math.random()*6;
-        const o = 0.25 + Math.random()*0.55;
-        p.style.left = x + '%';
-        p.style.top = y + '%';
-        p.style.width = s + 'px';
-        p.style.height = s + 'px';
-        p.style.opacity = o;
-        p.style.setProperty('--dur', d + 's');
-        p.style.setProperty('--delay', (Math.random()*1.5) + 's');
-        particlesHost.appendChild(p);
-      }
+  // const particlesHost = $('.hero__particles');
+  // if(particlesHost){
+  //   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  //   if(!prefersReduced){
+  //     const count = Math.min(42, Math.floor(window.innerWidth / 24));
+  //     for(let i=0;i<count;i++){
+  //       const p = document.createElement('span');
+  //       p.className = 'hero-particle';
+  //       const x = Math.random()*100;
+  //       const y = Math.random()*100;
+  //       const s = 2 + Math.random()*3;
+  //       const d = 2 + Math.random()*6;
+  //       const o = 0.25 + Math.random()*0.55;
+  //       p.style.left = x + '%';
+  //       p.style.top = y + '%';
+  //       p.style.width = s + 'px';
+  //       p.style.height = s + 'px';
+  //       p.style.opacity = o;
+  //       p.style.setProperty('--dur', d + 's');
+  //       p.style.setProperty('--delay', (Math.random()*1.5) + 's');
+  //       particlesHost.appendChild(p);
+  //     }
 
-      const style = document.createElement('style');
-      style.textContent = `
-        .hero-particle{position:absolute; border-radius:999px; background:linear-gradient(180deg, rgba(29,78,216,.95), rgba(124,58,237,.7));
-          box-shadow:0 0 22px rgba(37,99,235,.35);
-          animation:particleFloat var(--dur) ease-in-out infinite; transform:translateZ(0);
-        }
-        @keyframes particleFloat{
-          0%,100%{transform:translateY(0) translateX(0) scale(1)}
-          50%{transform:translateY(-18px) translateX(10px) scale(1.15)}
-        }
-      `;
-      document.head.appendChild(style);
+  //     const style = document.createElement('style');
+  //     style.textContent = `
+  //       .hero-particle{position:absolute; border-radius:999px; background:linear-gradient(180deg, rgba(29,78,216,.95), rgba(124,58,237,.7));
+  //         box-shadow:0 0 22px rgba(37,99,235,.35);
+  //         animation:particleFloat var(--dur) ease-in-out infinite; transform:translateZ(0);
+  //       }
+  //       @keyframes particleFloat{
+  //         0%,100%{transform:translateY(0) translateX(0) scale(1)}
+  //         50%{transform:translateY(-18px) translateX(10px) scale(1.15)}
+  //       }
+  //     `;
+  //     document.head.appendChild(style);
 
-      // Slow drift with GSAP if available
-      if(gsap){
-        gsap.to(particlesHost, {opacity: 1, duration: 1});
-      }
-    }
-  }
+  //     // Slow drift with GSAP if available
+  //     if(gsap){
+  //       gsap.to(particlesHost, {opacity: 1, duration: 1});
+  //     }
+  //   }
+  // }
 
   // ---------------- Year ----------------
   const year = $('#year');
