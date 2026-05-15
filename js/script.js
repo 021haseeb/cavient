@@ -217,23 +217,27 @@
 
   // map name -> end value & suffix behavior
   const counterConfig = {
-    activeTeams: {end: 1280, format:'compact'},
+    activeTeams: {end: 1280, format:'int'},
     engagement: {end: 98, suffix:'%', format:'int'},
     completion: {end: 82, suffix:'%', format:'int'},
     vitals: {end: 124, format:'int'},
     insights: {end: 38, format:'int'},
-    workflows: {end: 40, suffix:'+', format:'int'},
-    orgs: {end: 1500, format:'compact'},
-    employees: {end: 200000, format:'compact'},
-    patients: {end: 2000000, format:'compact'},
+    workflows: {end: 40, suffix:'+ ', format:'int'},
+    orgs: {end: 1500, suffix: '+',format:'compact'},
+    employees: {end: 200000,suffix: '+', format:'compact'},
+    patients: { end: 2, suffix: 'M+', format: 'int' },
     satisfaction: {end: 98, suffix:'%', format:'int'}
   };
 
   function formatCompact(n){
-    if(n >= 1_000_000) return (n/1_000_000).toFixed(n%1_000_000===0?0:1) + 'M';
-    if(n >= 1_000) return (n/1_000).toFixed(n%1_000===0?0:1) + 'K';
-    return String(n);
+    // For this site we want full numbers like "1,500+" and "200,000+" (not 1.5K / 200K).
+    // Keep compact for only the patient "2M+" case where the value is already "2M" in the HTML.
+    if(n >= 1_000_000){
+      return n.toLocaleString('en-US');
+    }
+    return n.toLocaleString('en-US');
   }
+
 
   function animateCounter(el, key){
     const cfg = counterConfig[key];
@@ -265,8 +269,10 @@
       if(format === 'compact'){
         el.textContent = formatCompact(value) + (suffix || '');
       } else {
-        el.textContent = value + suffix;
+        // Ensure plus signs and other suffixes render for int counters.
+        el.textContent = String(value) + (suffix || '');
       }
+
 
       if(t < 1) requestAnimationFrame(tick);
     };
@@ -275,19 +281,27 @@
   }
 
   // Use IntersectionObserver to start when visible
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(!entry.isIntersecting) return;
-      const el = entry.target;
-      const key = el.getAttribute('data-counter');
-      if(!key) return;
-      io.unobserve(el);
-      animateCounter(el, key);
-    });
-  }, {threshold:0.35});
+  // Fix: this page's stats section does NOT have id="#ai" and the code also references an undefined "io".
+  // Start counters when the actual .stats section scrolls into view.
+  const statsSection = document.querySelector('.stats');
 
-  counterEls.push(...counterTargets);
-  counterEls.forEach(el=>io.observe(el));
+  if(statsSection && counterTargets.length){
+    const observer = new IntersectionObserver((entries)=>{
+      if(entries[0].isIntersecting){
+        document.querySelectorAll('[data-counter]').forEach(el=>{
+          const key = el.getAttribute('data-counter');
+          if(!el.classList.contains('counted')){
+            el.classList.add('counted');
+            animateCounter(el, key);
+          }
+        });
+        observer.disconnect();
+      }
+    }, { threshold: 0.3 });
+
+    observer.observe(statsSection);
+  }
+
 
   // ---------------- GSAP animations ----------------
   const gsap = window.gsap;

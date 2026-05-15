@@ -42,9 +42,9 @@
   <header class="site-header" data-scroll-header>
     <div class="container header__inner">
       <a class="brand" href="#home" aria-label="Caviient home">
-        <span class="brand__icon" aria-hidden="true">
-          <img class="brand__logo" src="logo.svg" alt="" />
-        </span>
+        
+          <img class="brand__logo"  src="logo.svg" alt="" />
+        
         
       </a>
 
@@ -52,7 +52,7 @@
       <nav class="nav" aria-label="Primary navigation">
         <div class="nav-dd" data-dd="product">
           <button class="nav__link nav-dd__trigger" type="button" data-dd-trigger="product" aria-haspopup="menu" aria-expanded="false">
-            Product <i class="fa-solid fa-chevron-down" aria-hidden="true" style="margin-left:8px; font-size:12px; opacity:.75;"></i>
+            Platform <i class="fa-solid fa-chevron-down" aria-hidden="true" style="margin-left:8px; font-size:12px; opacity:.75;"></i>
           </button>
           <div class="nav-dd__menu" role="menu" aria-label="Product menu">
             <div class="nav-dd__grid">
@@ -86,15 +86,19 @@
           </div>
         </div>
 
-        <div class="nav-dd" data-dd="platform">
-          <button class="nav__link nav-dd__trigger" type="button" data-dd-trigger="global-platform" aria-haspopup="menu" aria-expanded="false">
-            Global Platform <i class="fa-solid fa-chevron-down" aria-hidden="true" style="margin-left:8px; font-size:12px; opacity:.75;"></i>
+        <div class="nav-dd" data-dd="ai-intelligence">
+          <button class="nav__link nav-dd__trigger" type="button" data-dd-trigger="ai-intelligence" aria-haspopup="menu" aria-expanded="false">
+            AI Intelligence <i aria-hidden="true" style="margin-left:8px; font-size:12px; opacity:.75;"></i>
           </button>
-          <div class="nav-dd__menu" role="menu" aria-label="Global Platform menu">
-            <div class="nav-dd__grid">
-              <a role="menuitem" class="nav-dd__item" href="#platform"><i class="fa-solid fa-network-wired" aria-hidden="true"></i>Platform</a>
-              <a role="menuitem" class="nav-dd__item" href="#platform"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i>See all features →</a>
-            </div>
+          
+        </div>
+
+        <div class="nav-dd" data-dd="industries">
+          <button class="nav__link nav-dd__trigger" type="button" data-dd-trigger="industries" aria-haspopup="menu" aria-expanded="false">
+            Industries <i aria-hidden="true" style="margin-left:8px; font-size:12px; opacity:.75;"></i>
+          </button>
+          <div class="nav-dd__menu" role="menu" aria-label="Industries menu">
+            
           </div>
         </div>
 
@@ -131,10 +135,10 @@
 
       <div class="header__actions">
           <a href="demo.html" class="btn btn--primary btn--animated" data-ripple>
-          <span class="btn__text">Book a Demo</span>
+          <span class="btn__demo">Book a Demo</span>
         </a>
         <a href="login.html" class="btn btn--outline" data-underline>
-          <span class="btn__text">Login</span>
+          <span class="btn__login">Login</span>
         </a>
 
         <button class="hamburger" type="button" aria-label="Open menu" data-hamburger>
@@ -177,6 +181,26 @@
             </div>
           </div>
 
+          <div class="mobile-dd" data-mobile-dd-group="ai-intelligence">
+            <button type="button" class="mobile-dd__trigger" data-mobile-dd-trigger="ai-intelligence" aria-expanded="false">AI Intelligence</button>
+            <div class="mobile-dd__menu" data-mobile-dd-menu="ai-intelligence" hidden>
+              <a class="mobile-dd__item" href="#ai-intelligence"><i class="fa-solid fa-microchip" aria-hidden="true"></i><span style="margin-left:10px;">Predictive Insights</span></a>
+              <a class="mobile-dd__item" href="#ai-intelligence"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i><span style="margin-left:10px;">Clinical Workflow Assist</span></a>
+              <a class="mobile-dd__item" href="#ai-intelligence"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span style="margin-left:10px;">Compliance Monitoring</span></a>
+              <a class="mobile-dd__item" href="#ai-intelligence"><i class="fa-solid fa-chart-simple" aria-hidden="true"></i><span style="margin-left:10px;">Performance Analytics</span></a>
+            </div>
+          </div>
+
+          <div class="mobile-dd" data-mobile-dd-group="industries">
+            <button type="button" class="mobile-dd__trigger" data-mobile-dd-trigger="industries" aria-expanded="false">Industries</button>
+            <div class="mobile-dd__menu" data-mobile-dd-menu="industries" hidden>
+              <a class="mobile-dd__item" href="#industries"><i class="fa-solid fa-house-chimney" aria-hidden="true"></i><span style="margin-left:10px;">Home Healthcare</span></a>
+              <a class="mobile-dd__item" href="#industries"><i class="fa-solid fa-building-columns" aria-hidden="true"></i><span style="margin-left:10px;">Care Agencies</span></a>
+              <a class="mobile-dd__item" href="#industries"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i><span style="margin-left:10px;">Clinics & Providers</span></a>
+              <a class="mobile-dd__item" href="#industries"><i class="fa-solid fa-users" aria-hidden="true"></i><span style="margin-left:10px;">Senior Living</span></a>
+            </div>
+          </div>
+
           <div class="mobile-dd" data-mobile-dd-group="platform">
             <button type="button" class="mobile-dd__trigger" data-mobile-dd-trigger="global-platform" aria-expanded="false">Global Platform</button>
             <div class="mobile-dd__menu" data-mobile-dd-menu="global-platform" hidden>
@@ -184,6 +208,7 @@
               <a class="mobile-dd__item" href="#platform"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i><span style="margin-left:10px;">See all features →</span></a>
             </div>
           </div>
+
 
           <div class="mobile-dd" data-mobile-dd-group="resources">
             <button type="button" class="mobile-dd__trigger" data-mobile-dd-trigger="resources" aria-expanded="false">Resources</button>
@@ -217,149 +242,73 @@
 
   <main id="home">
     <!-- HERO -->
-<section class="hero" aria-labelledby="hero-title" id="hero">
-      <div class="container hero__grid">
-        <div class="hero__content">
-          <div class="hero__label">
-            GLOBAL PLATFORM
-            <span class="hero__labelDot" aria-hidden="true"></span>
-          </div>
+<section class="hero" id="hero">
 
-          <h2 class="hero__title hero__title--alt" data-aos="fade-up" data-aos-duration="900" data-aos-delay="80">
-            The Global Platform for <span style="color:#2563eb;">Home Healthcare</span> Management
-          </h2>
+  <!-- RIGHT SIDE BG SHAPE -->
+  <img src="right.svg" alt="" class="hero__bgshape">
 
-          <div class="hero__global" data-aos="fade-up" data-aos-duration="900" data-aos-delay="160">
-            <div class="hero__globalIcon" aria-hidden="true">
-              <i class="fa-solid fa-shield-heart"></i>
-            </div>
-            <p class="hero__globalText">
-              Cavient empowers home healthcare providers to manage operations, ensure compliance, and deliver exceptional patient care—anywhere in the world.
-            </p>
-          </div>
+  <div class="container hero__wrapper">
 
-          <div class="hero__cta" data-aos="fade-up" data-aos-duration="900" data-aos-delay="220">
-            <button type="button" class="btn btn--primary btn--animated" data-ripple data-video-trigger aria-controls="platform-video">
-              <span class="btn__icon" aria-hidden="true"><i class="fa-solid fa-video"></i></span>
-              <span class="btn__text">Watch Platform Overview</span>
-            </button>
+    <!-- LEFT CONTENT -->
+    <div class="hero__content">
 
-            <a href="#platform" class="btn btn--secondary" data-ripple>
-              <span class="btn__text">Explore the Platform</span>
-            </a>
-          </div>
+      <span class="hero__label">
+        SOFTWARE PLATFORM
+      </span>
 
-          <div class="hero__securityLine" data-aos="fade-up" data-aos-duration="900" data-aos-delay="260">
-            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-            <span>Built for Security. Designed for Care.</span>
-          </div>
+      <h1 class="hero__title" style="font-weight:500;font-size:54px;">
+        The Connected <br>
+        Care <span style="font-weight:800">Software <br> Platform</span>
+      </h1>
 
-          <div class="hero__trust" data-aos="fade-up" data-aos-duration="900" data-aos-delay="280">
-            <div class="trust-item">
-              <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
-              <span>Secure by design</span>
-            </div>
-            <div class="trust-item">
-              <i class="fa-solid fa-lock" aria-hidden="true"></i>
-              <span>HIPAA-ready workflows</span>
-            </div>
-            <div class="trust-item">
-              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
-              <span>Actionable analytics</span>
-            </div>
-          </div>
-        </div>
+      <h3 class="hero__subtitle" style="font-size:17px;">
+        One Platform to Manage All Your Homecare Services.
+      </h3>
 
-        <div class="hero__visual" data-tilt-parallax>
-          <div class="hero__particles" aria-hidden="true"></div>
+      <p class="hero__desc" style="font-size:16px;color:black;">
+        Cavient is a unified, cloud-based software platform that helps healthcare organizations manage, coordinate, and optimize every aspect of home-based care—across people, processes, and technology.
+      </p>
 
-          <div class="device-stack">
-            <div class="device device--laptop" data-aos="zoom-in" data-aos-duration="900" data-aos-delay="100">
-              <div class="device__glow" aria-hidden="true"></div>
-              <img class="device__photo device__photo--laptop" src="setup.png" alt="Healthcare analytics dashboard" loading="eager" />
-              <div class="device__reflection" aria-hidden="true"></div>
-            </div>
+      <div class="hero__buttons">
 
+        <a href="#" class="btn btn--primary">
+          Explore the Platform
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
+        <a href="#" class="btn btn--outline">
+          Watch Platform Overview
+          <i class="fa-solid fa-play"></i>
+        </a>
 
-            <!-- Floating mini cards around hero -->
-            <div class="mini-float mini-float--1" aria-hidden="true" data-aos="fade-up" data-aos-duration="700">
-              <div class="mini-float__card">
-                <i class="fa-solid fa-user-check"></i>
-                <div>
-                  <div class="mini-float__k">+18%</div>
-                  <div class="mini-float__t">Faster check-ins</div>
-                </div>
-              </div>
-            </div>
-            <div class="mini-float mini-float--2" aria-hidden="true" data-aos="fade-up" data-aos-duration="700" data-aos-delay="60">
-              <div class="mini-float__card mini-float__card--alt">
-                <i class="fa-solid fa-syringe"></i>
-                <div>
-                  <div class="mini-float__k">98%</div>
-                  <div class="mini-float__t">Compliance rate</div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="hero__map" aria-hidden="true"></div>
-        </div>
       </div>
 
-      <!-- Dropdown anchor placeholders (for demo) -->
-      <div id="home-1" class="sr-only" aria-hidden="true"></div>
-      <div id="home-2" class="sr-only" aria-hidden="true"></div>
-      <div id="platform-2" class="sr-only" aria-hidden="true"></div>
-      <div id="solutions-2" class="sr-only" aria-hidden="true"></div>
-      <div id="ai-2" class="sr-only" aria-hidden="true"></div>
-      <div id="industries-2" class="sr-only" aria-hidden="true"></div>
-      <div id="resources-2" class="sr-only" aria-hidden="true"></div>
-      <div id="company-2" class="sr-only" aria-hidden="true"></div>
-
-      <div class="container hero__bottom">
-
-        <div class="video-modal" id="platform-video" aria-hidden="true">
-          <div class="video-modal__backdrop" data-video-close></div>
-          <div class="video-modal__panel" role="dialog" aria-modal="true" aria-label="Platform overview video">
-            <button type="button" class="video-modal__close" aria-label="Close video" data-video-close>
-              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-            </button>
-            <div class="video-modal__media">
-              <video class="video-modal__video" controls playsinline preload="metadata">
-                <source src="platform-overview.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
-        </div>
-
-        <div class="highlight-strip" id="platform">
-
-          <div class="feature-card" data-aos="zoom-in" data-aos-duration="700">
-            <div class="feature-card__icon feature-card__icon--blue"><i class="fa-solid fa-infinity"></i></div>
-            <h3 class="feature-card__title">All-in-One Platform</h3>
-            <p class="feature-card__desc">Unify scheduling, documentation, and billing into one connected workflow.</p>
-          </div>
-          <div class="feature-card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="80">
-            <div class="feature-card__icon feature-card__icon--cyan"><i class="fa-solid fa-cloud"></i></div>
-            <h3 class="feature-card__title">Cloud Based</h3>
-            <p class="feature-card__desc">Secure access across teams—fast setup, seamless scaling, zero downtime.</p>
-          </div>
-          <div class="feature-card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="160">
-            <div class="feature-card__icon feature-card__icon--purple"><i class="fa-solid fa-database"></i></div>
-            <h3 class="feature-card__title">Data Driven</h3>
-            <p class="feature-card__desc">Turn operational signals into measurable outcomes with real-time dashboards.</p>
-          </div>
-          <div class="feature-card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="240">
-            <div class="feature-card__icon feature-card__icon--green"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3 class="feature-card__title">Built for Compliance</h3>
-            <p class="feature-card__desc">Audit-friendly workflows that help you stay aligned and confident.</p>
-          </div>
-        </div>
+      <div class="hero__trusted">
+        <i class="fa-solid fa-shield"></i>
+        Trusted by 1,500+ organizations in 40+ countries
       </div>
-    </section>
 
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="hero__visual">
+
+      <!-- DOTS -->
+      <div class="hero__dots"></div>
+
+      <!-- BACK IMAGE -->
+      
+
+      <!-- FRONT IMAGE -->
+      <div class="hero__image hero__image--front">
+        <img src="setup.png" alt="">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
     <!-- Premium trusted features (single horizontal card) -->
     <section class="section section--premiumTrust">
   <div class="precontainer">
@@ -432,12 +381,14 @@
       <img class="service-card__icon-img" src="css/security.png" alt="" aria-hidden="true" />
     </div>
 
-    <h3 class="service-card__title">Electronic Health Records</h3>
+    <h3 class="service-card__title">Home <br>Healthcare</h3>
 
   </div>
 
   <p class="service-card__desc">
-    Secure, comprehensive patient records accessible anytime, anywhere.
+    Manage skilled nursing, therapy,<br>
+caregiver visits, and care plans with <br>
+ease.
   </p>
 
 </article>
@@ -455,11 +406,14 @@
       <img class="service-card__icon-img" src="css/security.png" alt="" aria-hidden="true" />
     </div>
 
-    <h3 class="service-card__title">Compliance & Licensing</h3>
+    <h3 class="service-card__title">Behavioral <br>
+Health</h3>
   </div>
 
   <p class="service-card__desc">
-    Track certifications, licenses, and regulatory requirements with ease.
+    Coordinate mental health services,<br>
+teletherapy, assessments, and <br>
+outcomes.
   </p>
 
 </article>
@@ -478,12 +432,15 @@
       <img class="service-card__icon-img" src="css/security.png" alt="" aria-hidden="true" />
     </div>
 
-    <h3 class="service-card__title">Workforce Management</h3>
+    <h3 class="service-card__title">Senior<br>
+Care</h3>
 
   </div>
 
   <p class="service-card__desc">
-    Schedule smarter, manage qualifications, and empower your care teams.
+    Support aging in place with wellness <br>
+tracking, family communication, and <br>
+more
   </p>
 
 </article>
@@ -502,12 +459,14 @@
       <img class="service-card__icon-img" src="css/security.png" alt="" aria-hidden="true" />
     </div>
 
-    <h3 class="service-card__title">Incident & Risk Management</h3>
+    <h3 class="service-card__title">Remote <br>
+Monitoring</h3>
 
   </div>
 
   <p class="service-card__desc">
-    Report, track, and resolve incidents with complete visibility.
+    Integrate devices, track vitals, and <br>
+receive real-time alerts and insights.
   </p>
 
 </article>
@@ -526,12 +485,14 @@
       <img class="service-card__icon-img" src="css/security.png" alt="" aria-hidden="true" />
     </div>
 
-    <h3 class="service-card__title">Billing & Revenue Cycle</h3>
+    <h3 class="service-card__title">Community <br>
+Care</h3>
 
   </div>
 
   <p class="service-card__desc">
-    Streamline billing, manage claims, and get paid faster.
+    Manage outreach programs, community <br>
+health workers, and social care.
   </p>
 
 </article>
@@ -550,12 +511,15 @@
       <img class="service-card__icon-img" src="css/security.png" alt="" aria-hidden="true" />
     </div>
 
-    <h3 class="service-card__title">Analytics & Reporting</h3>
+    <h3 class="service-card__title">Chronic<br>
+
+Care</h3>
 
   </div>
 
   <p class="service-card__desc">
-    Make data-driven decisions with real-time insights and custom reports.
+    Track chronic conditions, manage care <br>
+plans, and improve long-term outcomes.
   </p>
 
 </article>
@@ -568,18 +532,18 @@
 
     <div class="left-content">
 
-        <span class="small-title">
+        <span class="small-title" >
             BUILT FOR THE WORLD
         </span>
 
-        <h2 class="main-heading">
+        <h2 class="main-heading" >
             One <span style="color:#1D4ED8;">Platform</span><br>
             Any Country.
         </h2>
 
-        <p class="description">
+        <p class="description" style="font-weight:100;font-size:17px;">
             Cavient is designed to adapt to local regulations,<br>
-            languages, and operational needs—so you can deliver
+            languages, and operational needs—so you can<br> deliver
             care anywhere.
         </p>
 
@@ -587,7 +551,7 @@
 
             <div class="feature-item">
                 <div class="check-icon"><img src="tick.svg" alt="tick"></div>
-                <span style="font-size:18px; font-weight:70;">Multi-country compliance support</span>
+                <span style="font-size:18px; font-weight:70;font-size:17px;">Multi-country compliance support</span>
             </div>
 <br>
             <div class="feature-item">
@@ -617,38 +581,47 @@
 </section>
 
     <!-- STATS (Dark blue) -->
-    <section class="section section--dark" aria-label="Key platform metrics">
-      <div class="container">
-        <div class="stats-grid" id="ai">
+    <section class="stats">
+  <div class="container stats__grid">
 
-          <div class="stat-card" data-aos="zoom-in" data-aos-duration="700">
-            <div class="stat-card__icon"><i class="fa-solid fa-diagram-project"></i></div>
-            <div class="stat-card__num" data-counter="workflows">0</div>
-            <div class="stat-card__label">Healthcare Workflows</div>
-          </div>
-          <div class="stat-card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="60">
-            <div class="stat-card__icon"><i class="fa-solid fa-building"></i></div>
-            <div class="stat-card__num" data-counter="orgs">0</div>
-            <div class="stat-card__label">Organizations</div>
-          </div>
-          <div class="stat-card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="120">
-            <div class="stat-card__icon"><i class="fa-solid fa-user-group"></i></div>
-            <div class="stat-card__num" data-counter="employees">0</div>
-            <div class="stat-card__label">Employees</div>
-          </div>
-          <div class="stat-card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="180">
-            <div class="stat-card__icon"><i class="fa-solid fa-heart"></i></div>
-            <div class="stat-card__num" data-counter="patients">0</div>
-            <div class="stat-card__label">Patients Served</div>
-          </div>
-          <div class="stat-card" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="240">
-            <div class="stat-card__icon"><i class="fa-solid fa-star"></i></div>
-            <div class="stat-card__num" data-counter="satisfaction">0</div>
-            <div class="stat-card__label">Customer Satisfaction</div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-shield"></i></div>
+      <h3 data-counter="workflows">40+</h3>
+      <p>Countries Worldwide</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-shield"></i></div>
+      <h3 data-counter="orgs">1,500+</h3>
+      <p>Healthcare Organizations</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-shield"></i></div>
+      <h3 data-counter="employees">200,000+</h3>
+      <p>Caregivers Empowered</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-shield"></i></div>
+      <h3 data-counter="patients">2M+</h3>
+      <p>Patients Served</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-shield"></i></div>
+      <h3 data-counter="engagement">98%</h3>
+      <p>Customer Satisfaction</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-shield"></i></div>
+      <h3>HIPAA</h3>
+      <p>Enterprise-Grade Security</p>
+    </div>
+
+  </div>
+</section>
 
     <!-- TESTIMONIALS -->
     
@@ -657,18 +630,24 @@
 
   <div class="cta-container">
 
-    <div class="cta-left">
-      <h2>Ready to Transform<br> Your Healthcare Operations?</h2>
+    <h2 class="cta-title">
+      Ready to <span style="color:#1D4ED8;">Transform Your</span><br>
+      Healthcare Operations?
+    </h2>
 
-      <p>
-        Join thousands of providers who trust Cavient to simplify operations,
-        ensure compliance, and elevate care.
-      </p>
-    </div>
+    <p class="cta-text">
+      Join thousands of providers who trust Cavient to simplify operations,
+      ensure compliance, and elevate care.
+    </p>
 
-    <div class="cta-right">
-      <a href="#" class="btn btn-dark">Book a Demo →</a>
-      <a href="#" class="btn btn-light">Talk to an Expert</a>
+    <div class="cta-buttons">
+      <a href="#" class="btn btn-dark">
+        Book a Demo <span>→</span>
+      </a>
+
+      <a href="#" class="btn btn-light">
+        Talk to an Expert
+      </a>
     </div>
 
   </div>
