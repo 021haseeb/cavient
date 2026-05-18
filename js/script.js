@@ -66,7 +66,8 @@
 
     // Close when resizing to desktop
     window.addEventListener('resize', ()=>{
-      if(window.innerWidth > 860) setOpen(false);
+      // Keep JS behavior aligned with CSS breakpoint where desktop navbar hides/shifts.
+      if(window.innerWidth > 768) setOpen(false);
     });
   }
 

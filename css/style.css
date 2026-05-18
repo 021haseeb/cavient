@@ -144,7 +144,7 @@ body{
   }
 }
 .header__inner{
-  height:78px; display:flex; align-items:center; justify-content:space-between; gap:16px;
+  height:78px; display:flex; align-items:center; justify-content:space-between; gap:34px;
 }
 .brand{
   display: flex;
@@ -179,6 +179,7 @@ body{
   align-items: center;
   gap: 6px;
 }
+
 
 .nav__link::after{
   content:"";
@@ -288,7 +289,6 @@ body{
   position:relative;
   overflow:hidden;
   background:transparent;
-  padding:90px 0;
   
 }
 
@@ -325,7 +325,7 @@ body{
 ========================= */
 
 .hero__content{
-  width:42%;
+  width:37%;
 }
 
 .hero__label{
@@ -496,9 +496,7 @@ body{
 
 @media(max-width:991px){
 
-  .hero{
-    padding:70px 0;
-  }
+  
 
   .hero__wrapper{
     flex-direction:column;
@@ -537,9 +535,7 @@ body{
 
 @media(max-width:768px){
 
-  .hero{
-    padding:50px 0;
-  }
+  
 
   .hero__title{
     font-size:38px;
@@ -664,7 +660,7 @@ body{
 .services-grid{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
-  gap:60px;
+  gap:25px;
   margin-top:30px;
 }
 
@@ -719,8 +715,8 @@ body{
 .service-card__icon{
   width:46px;
   height:46px;
-  border-radius:18px;
-  
+  border-radius:23px;
+ 
   display:grid;
   place-items:center;
   border:1px solid rgba(229,231,235,.9);
@@ -732,7 +728,9 @@ body{
 .service-card__icon-img{
   width:28px;
   height:28px;
+ 
   object-fit:contain;
+    filter: brightness(0) invert(1);
   display:block;
 }
 
@@ -780,12 +778,12 @@ body{
   color:#fff;
   transform:scale(1.05);
 }
-.service-card__icon--blue{background:rgba(255, 255, 255, 0.858); color:var(--primary); border-color:rgba(29,78,216,.22)}
-.service-card__icon--purple{background:rgba(255, 255, 255, 0.933); color:var(--purple); border-color:rgba(124,58,237,.22)}
-.service-card__icon--green{background:rgba(255, 255, 255, 0.932); color:var(--success); border-color:rgba(16,185,129,.22)}
-.service-card__icon--orange{background:rgba(254, 254, 254, 0.892); color:var(--orange); border-color:rgba(245,158,11,.25)}
-.service-card__icon--pink{background:rgba(255, 255, 255, 0.868); color:var(--pink); border-color:rgba(236,72,153,.22)}
-.service-card__icon--cyan{background:rgba(255, 255, 255, 0.905); color:rgba(37,99,235,.95); border-color:rgba(37,99,235,.22)}
+.service-card__icon--blue{background:rgba(36, 157, 255, 0.858); color:var(--primary); border-color:rgba(29,78,216,.22)}
+.service-card__icon--purple{background:rgba(36, 157, 255, 0.858); color:var(--purple); border-color:rgba(124,58,237,.22)}
+.service-card__icon--green{background:rgba(36, 157, 255, 0.858); color:var(--success); border-color:rgba(16,185,129,.22)}
+.service-card__icon--orange{background:rgba(36, 157, 255, 0.858); color:var(--orange); border-color:rgba(245,158,11,.25)}
+.service-card__icon--pink{background:rgba(36, 157, 255, 0.858); color:var(--pink); border-color:rgba(236,72,153,.22)}
+.service-card__icon--cyan{background:rgba(36, 157, 255, 0.858); color:rgba(37,99,235,.95); border-color:rgba(37,99,235,.22)}
 
 .service-card__title{margin:0; font-size:16px; font-weight:900; letter-spacing:-.01em;}
 .service-card__desc{margin:10px 0 0; color:var(--muted); line-height:1.65; font-weight:600; font-size:13.5px}
@@ -815,10 +813,11 @@ body{
   /* BRIGHTER TEXT */
   color:rgba(255,255,255,0.82);
   word-spacing: 3px;
+  padding: 20px;
 
   line-height:1.65;
   font-weight:100;
-  font-size:16.5px;
+  font-size:14px;
 }
 
 /* LINK */
@@ -863,7 +862,7 @@ body{
 
 .description{
     color:#e2e8f5;
-    font-size:20px;
+    font-size:15px;
     line-height:1.7;
     margin-bottom:32px;
     max-width:650px;
@@ -903,7 +902,7 @@ body{
 
 
 .left-content{
-  margin-left: 120px;
+  margin-left: 100px;
 }
 
 .global-section{
@@ -914,7 +913,7 @@ body{
   margin: 0 auto 60px auto;
 
   min-height: 320px;
-  padding: clamp(24px, 3.2vw, 40px) clamp(18px, 4.5vw, 60px);
+  padding: clamp(10px, 3.2vw, 30px) clamp(18px, 4.5vw, 60px);
 
   display: flex;
   align-items: center;
@@ -928,7 +927,7 @@ body{
   background-size: clamp(260px, 40vw, 620px);
 
   /* Keep background decoration aligned with the text block */
-  background-position: calc(100% - clamp(110px, 18vw, 250px)) center;
+  background-position: calc(100% - clamp(110px, 18vw, 120px)) center;
 
   background-repeat: no-repeat;
 
@@ -1077,6 +1076,9 @@ body{
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+
+
 /* Footer */
 .footer{
   background: radial-gradient(
@@ -1091,7 +1093,7 @@ body{
     ),
     linear-gradient(135deg, #0b1b3a 0%, #0f2f6b 40%, #020e2e 100%);
   color:white;
-  padding:70px 0 30px;
+  padding:70px 0 4px;
   border-top:1px solid rgba(255,255,255,0.08);
 }
 
@@ -1145,14 +1147,16 @@ body{
 
 /* COLUMNS */
 .footer__cols{
+  
   display:grid;
   grid-template-columns:repeat(5,1fr);
   gap:40px;
 }
 
 .footer__cols h4{
-  font-size:13px;
-  margin-bottom:14px;
+  font-size:15px;
+  margin-bottom:16px;
+  font-weight: 100;
 }
 
 .footer__cols a{
@@ -1322,7 +1326,77 @@ body{
   .pricing-grid{grid-template-columns:repeat(2, 1fr)}
   .team-grid{grid-template-columns:repeat(2, 1fr)}
   .resources-grid{grid-template-columns:repeat(2, 1fr)}
+
+  /* Navbar: prevent collisions on tablets before hamburger kicks in */
+  .site-header .header__inner{gap:18px;}
+  .header__actions{gap:10px;}
+
+  .nav{
+    gap:14px;
+    min-width:0;
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+
+  /* Make nav items shrink safely and avoid hard wrapping */
+  .nav__link{
+    padding-left:0;
+    padding-right:0;
+    white-space:nowrap;
+    flex: 0 1 auto;
+    min-width:0;
+  }
+  .nav-dd{flex:0 1 auto; min-width:0;}
+  .nav-dd__trigger{padding:6px 2px; font-size:13px; white-space:nowrap; min-width:0;}
+
+  /* Dropdown trigger underline doesn't affect layout */
 }
+
+/* Switch to hamburger earlier so links never get cramped */
+@media (max-width: 900px){
+  .nav-dd__menu{left:0; right:0; margin:0; transform:none;}
+  .nav-dd__menu{position:static; width:100%;}
+
+  .nav{display:none}
+
+  /* Keep actions tidy on tablet */
+  .header__actions{gap:8px;}
+  .header__actions .btn--primary{display:none}
+  .header__actions .btn--outline{display:none}
+
+  .nav-dd__item{font-weight:200;}
+  .mobile-dd__item{font-weight:200;}
+
+  .hamburger{display:inline-flex}
+
+  /* Mobile: show a scrollable panel while keeping responsiveness */
+  .mobile-menu{display:block; height:0; overflow:hidden; transition:height .28s ease;}
+  .mobile-menu--open{height:70vh; max-height:520px; overflow:auto;}
+  .mobile-menu__panel{padding:14px 0;}
+  .mobile-menu__links{display:flex; flex-direction:column; gap:12px; padding:10px 0;}
+  .mobile-menu__actions{display:flex; flex-direction:column; gap:10px;}
+  .mobile-menu__actions .btn{width:100%}
+
+  /* Also ensure dropdown menus fit on smaller screens */
+  .nav-dd__menu{min-width:0; width:100%;}
+  .nav-dd__grid{grid-template-columns:1fr;}
+
+  /* Required: stack/one-column layout */
+  .services-grid{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:1fr;}
+  .highlight-strip{grid-template-columns:1fr;}
+  .premiumTrust__grid{grid-template-columns:1fr;}
+  .testimonials-grid{grid-template-columns:1fr;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .team-grid{grid-template-columns:1fr;}
+  .resources-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+
+  /* Typography scaling */
+  .hero__title{font-size:32px;}
+  .section-head__title{font-size:28px;}
+}
+
 
 @media (max-width: 768px){
   .nav-dd__menu{left:0; right:0; margin:0; transform:none;}
@@ -1461,6 +1535,13 @@ body{
     flex-wrap: wrap; /* important */
   }
 
+  /* Ensure action buttons don't shrink awkwardly */
+  .header__actions .btn{
+    flex: 0 0 auto;
+    white-space: nowrap;
+    min-width: 0;
+  }
+
   .btn {
     font-size: 12px;       /* smaller text */
     padding: 6px 10px;     /* smaller button */
@@ -1474,6 +1555,7 @@ body{
 
 }
 
+
 /* ---------------- Added sections: Testimonials / Pricing / FAQ / Contact / Team / Resources ---------------- */
 
 /* Premium trusted features (single horizontal card) */
@@ -1483,7 +1565,7 @@ body{
 
 /* DARK PILL CONTAINER */
 .precontainer{
-  max-width: 1400px;
+  max-width: 1210px;
   margin: 0 auto;
   padding: 30px 40px;
   
@@ -1538,7 +1620,7 @@ body{
   justify-content: center;
 
 
-  color: #fff;
+  color: #43a7ffe1;
   font-size: 40px;
 }
 
@@ -1550,7 +1632,7 @@ body{
 }
 
 .premiumTrust__sub{
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 100;
   color: whitesmoke;
 }
@@ -1762,7 +1844,7 @@ body{
 }
 
 .cta-container{
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   min-height: 320px;
 
@@ -1827,6 +1909,7 @@ body{
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  height: 50px;
 }
 
 /* PRIMARY BUTTON */
