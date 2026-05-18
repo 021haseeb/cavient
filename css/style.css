@@ -675,7 +675,7 @@ body{
   border-radius:var(--radius-xl);
   height: 210px;
   
-  padding:20px;
+  padding:10px;
   box-shadow:var(--shadow-sm);
   position:relative;
   overflow:hidden;
